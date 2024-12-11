@@ -28,6 +28,11 @@ app.use('/static', express.static(path.join(__dirname, 'public')));
 circuitsHandler.handleAllCirc(circuitsProvider, app);
 circuitsHandler.handleCircId(circuitsProvider, app);
 
+constructorsHandler.handleAllConst(constructorsProvider, app);
+constructorsHandler.handleConstRef(constructorsProvider, app);
+
+
+
 
 
 
