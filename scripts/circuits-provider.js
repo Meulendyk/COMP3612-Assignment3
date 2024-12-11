@@ -8,6 +8,8 @@ const jsonPath = path.join(__dirname, '../data', 'circuits.json');
 //Function - Pull data from JSON path and return array, error message if failed
 let circuits;
 getCircuitsData(jsonPath);
+
+//Callback
 async function getCircuitsData(jsonPath) {
     //Error checking
     try {
@@ -16,7 +18,8 @@ async function getCircuitsData(jsonPath) {
     }
     catch (err) {console.log('Error reading ' + jsonPath); }
 }
-//Returning JSON data for modules
+
+//Function - Returning JSON data for modules
 function getCircData() {
     return circuits;
 }

@@ -8,6 +8,8 @@ const jsonPath = path.join(__dirname, '../data', 'constructors.json');
 //Function - Pull data from JSON path and return array, error message if failed
 let constructors;
 getConstructorsData(jsonPath);
+
+//Callback
 async function getConstructorsData(jsonPath) {
     //Error checking
     try {
@@ -16,7 +18,8 @@ async function getConstructorsData(jsonPath) {
     }
     catch (err) {console.log('Error reading' + jsonPath); }
 }
-//Returning JSON data for modules
+
+//Function - Returning JSON data for modules
 function getConstData() {
     return constructors;
 }
