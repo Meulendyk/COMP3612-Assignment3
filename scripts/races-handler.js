@@ -13,7 +13,7 @@ const handleRacesYear = (racesProvider, app) => {
     app.get('/api/races/season/:year', (req, resp) => {
         const races = racesProvider.getRacData();
         const yearToFind = req.params.year;
-        const foundRaces = races.filter(obj => yearToFind === obj.year);
+        const foundRaces = races.filter(obj => yearToFind == obj.year);
         if (foundRaces.length > 0) {
             resp.json(foundRaces);
         } else {
