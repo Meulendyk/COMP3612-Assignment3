@@ -12,8 +12,8 @@ const handleAllConst = (constructorProvider, app) => {
 const handleConstRef = (constructorProvider, app) => {
     app.get('/api/constructors/:ref', (req, resp) => {
         const constructors = constructorProvider.getConstData();
-        const refToFind = parseInt(req.params.ref, 10);
-        const foundConstructor = constructors.filter(obj => refToFind === obj.id);
+        const refToFind = req.params.ref;
+        const foundConstructor = constructors.filter(obj => refToFind == obj.constructorRef);
         if (foundConstructor.length > 0) {
             resp.json(foundConstructor);
         } else {
@@ -22,19 +22,22 @@ const handleConstRef = (constructorProvider, app) => {
     });
 };
 
-const handleConstRefAndSeason = (constructorProvider, app) => {
+const handleConstRefAndSeason = (constructorProvider, raceProvider, resultProvider, app) => {
     app.get('/api/constructorResults/:ref/:year', (req, resp) => {
         const constructors = constructorProvider.getConstData();
-        const refToFind = parseInt(req.params.ref, 10);
-        const yearToFind = parseInt(req.params.year, 10);
+        const races = raceProvider.getRacData();
+        const results = resultProvider.getResData();
 
-        const foundConstructor = constructors.filter(obj => obj.ref == refToFind && obj.year == yearToFind);
+        const refToFind = req.params.ref;
+        const yearToFind = req.params.year;
 
-        if (foundConstructor.length > 0) {
-            resp.json(foundConstructor);
+        const foundResult = constructors.filter(obj => obj.constructor.ref == refToFind && obj.race.year == yearToFind);
+        if (foundResult.length > 0) {
+            resp.json(foundResult);
         } else {
-            resp.json(jsonMessage(`Constructor with ref ${refToFind} & year ${yearToFind} not found`));
+            resp.json(jsonMessage(`Constructor with ref ${refToFind} not found`));
         }
+
     })
 }
 
