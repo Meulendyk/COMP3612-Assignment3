@@ -18,10 +18,10 @@ const handleConstRef = (constructorsProvider, app) => {
         const constructors = constructorsProvider.getConstData();
 
         //Establish variables for filter 
-        const refToFind = req.params.ref
+        const refToFind = req.params.ref.toLowerCase();
 
         //Function - foundConstructors filters path variables and creates array
-        const foundConstructors = constructors.filter(obj => refToFind == obj.constructorRef);
+        const foundConstructors = constructors.filter(obj => refToFind == obj.constructorRef.toLowerCase());
         
         //Return array if array is not empty, error message if so
         if (foundConstructors.length > 0) {

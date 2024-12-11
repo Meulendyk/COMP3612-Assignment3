@@ -9,11 +9,11 @@ const handleConstResults = (constructorsProvider, racesProvider, resultsProvider
         const results = resultsProvider.getResData();
 
         //Establish variables for filter 
-        const refToFind = req.params.ref;
+        const refToFind = req.params.ref.toLowerCase();
         const yearToFind = req.params.year;
 
         //Function - foundResults filters path variables and creates array
-        const foundResults = results.filter(obj => obj.constructor.ref == refToFind && obj.race.year == yearToFind);
+        const foundResults = results.filter(obj => obj.constructor.ref.toLowerCase() == refToFind && obj.race.year == yearToFind);
         
         //Return array if array is not empty, error message if so
         if (foundResults.length > 0) {
@@ -36,11 +36,11 @@ const handleDriversResults = (driversProvider, racesProvider, resultsProvider, a
         const results = resultsProvider.getResData();
 
         //Establish variables for filter 
-        const refToFind = req.params.ref;
+        const refToFind = req.params.ref.toLowerCase();
         const yearToFind = req.params.year;
         
         //Function - foundResults filters path variables and creates array
-        const foundResults = results.filter(obj => obj.driver.ref == refToFind && obj.race.year == yearToFind);
+        const foundResults = results.filter(obj => obj.driver.ref.toLowerCase() == refToFind && obj.race.year == yearToFind);
 
         //Return array if array is not empty, error message if so
         if (foundResults.length > 0) {

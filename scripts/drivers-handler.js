@@ -19,10 +19,10 @@ const handleDriversRef = (driversProvider, app) => {
         const drivers = driversProvider.getDrivData();
 
         //Establish variables for filter 
-        const refToFind = req.params.ref;
+        const refToFind = req.params.ref.toLowerCase();
 
         //Function - foundDrivers filters path variables and creates array
-        const foundDrivers = drivers.filter(obj => refToFind == obj.driverRef);
+        const foundDrivers = drivers.filter(obj => refToFind == obj.driverRef.toLowerCase());
 
         //Return array if array is not empty, error message if so
         if (foundDrivers.length > 0) {
