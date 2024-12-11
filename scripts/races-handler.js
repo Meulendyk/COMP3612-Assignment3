@@ -28,7 +28,7 @@ const handleRacesId = (racesProvider, app) => {
 
         const idToFind = req.params.id;
 
-        const foundRaces = results.filter(obj => idToFind == obj.id);
+        const foundRaces = races.filter(obj => idToFind == obj.id);
 
         if (foundRaces.length > 0) {
             resp.json(foundRaces);
