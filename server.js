@@ -2,7 +2,7 @@
 const path = require('path');
 const express = require('express');
 const app = express();
-
+const port = process.env.PORT || 8080;
 //Reference each of our own modules
 const circuitsProvider = require('./scripts/circuits-provider.js');
 const circuitsHandler = require('./scripts/circuits-handler.js');
@@ -49,8 +49,7 @@ app.use( (req,resp) => {
     resp.status(404).send('Unable to find the requested resource!');
 });
 
-const port = 8080;
 app.listen(port, () => {
-    console.log('Server running at port=' + port);
+    console.log('Server running at port= ' + port);
 });
 
