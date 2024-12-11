@@ -1,17 +1,17 @@
 //return all circuits
-const handleAllCirc = (circuitProvider, app) => {
+const handleAllCirc = (circuitsProvider, app) => {
     app.get('/api/circuits/', (req, resp) => {
 
         //get data from circuit provider
-        const circuits = circuitProvider.getCircData();
+        const circuits = circuitsProvider.getCircData();
         resp.json(circuits);
     });
 };
 
 //returns circuit of specific id
-const handleCircId = (circuitProvider, app) => {
+const handleCircId = (circuitsProvider, app) => {
     app.get('/api/circuits/:id', (req, resp) => {
-        const circuits = circuitProvider.getCircData();
+        const circuits = circuitsProvider.getCircData();
         const idToFind = req.params.id;
         const foundCircuit = circuits.filter(obj => idToFind == obj.circuitId);
         if (foundCircuit.length > 0) {

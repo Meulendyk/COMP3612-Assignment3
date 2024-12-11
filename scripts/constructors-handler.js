@@ -1,45 +1,26 @@
 //return all constructors
-const handleAllConst = (constructorProvider, app) => {
+const handleAllConst = (constructorsProvider, app) => {
     app.get('/api/constructors/', (req, resp) => {
 
         //get data from constructor provider
-        const constructors = constructorProvider.getConstData();
+        const constructors = constructorsProvider.getConstData();
         resp.json(constructors);
     });
 };
 
 //returns constructor of specific ref
-const handleConstRef = (constructorProvider, app) => {
+const handleConstRef = (constructorsProvider, app) => {
     app.get('/api/constructors/:ref', (req, resp) => {
-        const constructors = constructorProvider.getConstData();
+        const constructors = constructorsProvider.getConstData();
         const refToFind = req.params.ref;
-        const foundConstructor = constructors.filter(obj => refToFind == obj.constructorRef);
-        if (foundConstructor.length > 0) {
-            resp.json(foundConstructor);
+        const foundConstructors = constructors.filter(obj => refToFind == obj.constructorRef);
+        if (foundConstructors.length > 0) {
+            resp.json(foundConstructors);
         } else {
             resp.json(jsonMessage(`Constructor with ref ${refToFind} not found`));
         }
     });
 };
-
-const handleConstRefAndSeason = (constructorProvider, raceProvider, resultProvider, app) => {
-    app.get('/api/constructorResults/:ref/:year', (req, resp) => {
-        const constructors = constructorProvider.getConstData();
-        const races = raceProvider.getRacData();
-        const results = resultProvider.getResData();
-
-        const refToFind = req.params.ref;
-        const yearToFind = req.params.year;
-
-        const foundResult = constructors.filter(obj => obj.constructor.ref == refToFind && obj.race.year == yearToFind);
-        if (foundResult.length > 0) {
-            resp.json(foundResult);
-        } else {
-            resp.json(jsonMessage(`Constructor with ref ${refToFind} not found`));
-        }
-
-    })
-}
 
 const jsonMessage = (msg) => {
     return { message: msg };
@@ -48,5 +29,4 @@ const jsonMessage = (msg) => {
 module.exports = {
     handleAllConst,
     handleConstRef,
-    handleConstRefAndSeason
 };

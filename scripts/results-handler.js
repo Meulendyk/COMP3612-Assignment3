@@ -1,9 +1,9 @@
 //Returns race results of specified constructor ref and season
-const handleConstResults = (constructorProvider, raceProvider, resultProvider, app) => {
+const handleConstResults = (constructorsProvider, racesProvider, resultsProvider, app) => {
     app.get('/api/constructorResults/:ref/:year', (req, resp) => {
-        const constructors = constructorProvider.getConstData();
-        const races = raceProvider.getRacData();
-        const results = resultProvider.getResData();
+        const constructors = constructorsProvider.getConstData();
+        const races = racesProvider.getRacData();
+        const results = resultsProvider.getResData();
 
         const refToFind = req.params.ref;
         const yearToFind = req.params.year;
@@ -19,11 +19,11 @@ const handleConstResults = (constructorProvider, raceProvider, resultProvider, a
 }
 
 //Returns race results of specified driver ref and season
-const handleDrivResults = (driverProvider, raceProvider, resultProvider, app) => {
+const handleDrivResults = (driversProvider, racesProvider, resultsProvider, app) => {
     app.get('/api/driverResults/:ref/:year', (req, resp) => {
-        const drivers = driverProvider.getDrivData();
-        const races = raceProvider.getRacData();
-        const results = resultProvider.getResData();
+        const drivers = driversProvider.getDrivData();
+        const races = racesProvider.getRacData();
+        const results = resultsProvider.getResData();
 
         const refToFind = req.params.ref;
         const yearToFind = req.params.year;
@@ -38,9 +38,9 @@ const handleDrivResults = (driverProvider, raceProvider, resultProvider, app) =>
     })
 }
 
-const handleIdResults = (raceProvider, app) => {
+const handleIdResults = (racesProvider, app) => {
     app.get('/api/results/race/:id', (req, resp) => {
-        const results = raceProvider.getRacData();
+        const results = racesProvider.getRacData();
 
         const idToFind = req.params.id;
 
@@ -54,9 +54,9 @@ const handleIdResults = (raceProvider, app) => {
     })
 }
 
-const handleSeasonResults = (raceProvider, app) => {
+const handleSeasonResults = (racesProvider, app) => {
     app.get('/api/results/race/:year', (req, resp) => {
-        const results = raceProvider.getRacData();
+        const results = racesProvider.getRacData();
 
         const yearToFind = req.params.year;
 

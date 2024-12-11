@@ -1,7 +1,7 @@
 const fs = require('fs').promises;
 
 //constructing path
-const jsonPath = path.join(__dirname, './data', 'constructors.json');
+const jsonPath = path.join(__dirname, '../data', 'constructors.json');
 
 //get data
 let constructors;
