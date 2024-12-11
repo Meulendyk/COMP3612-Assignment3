@@ -19,7 +19,7 @@ const handleConstResults = (constructorsProvider, racesProvider, resultsProvider
 }
 
 //Returns race results of specified driver ref and season
-const handleDrivResults = (driversProvider, racesProvider, resultsProvider, app) => {
+const handleDriversResults = (driversProvider, racesProvider, resultsProvider, app) => {
     app.get('/api/driverResults/:ref/:year', (req, resp) => {
         const drivers = driversProvider.getDrivData();
         const races = racesProvider.getRacData();
@@ -76,7 +76,7 @@ const jsonMessage = (msg) => {
 
 module.exports = {
     handleConstResults,
-    handleDrivResults,
+    handleDriversResults,
     handleIdResults,
     handleSeasonResults
 }

@@ -9,7 +9,7 @@ const handleAllDrivers = (driversProvider, app) => {
 };
 
 //returns driver of specific ref
-const handleDriverRef = (driversProvider, app) => {
+const handleDriversRef = (driversProvider, app) => {
     app.get('/api/drivers/:ref', (req, resp) => {
         const drivers = driversProvider.getDrivData();
         const refToFind = req.params.ref;
@@ -27,6 +27,6 @@ const jsonMessage = (msg) => {
 };
 
 module.exports = {
-    handleAllDriv,
-    handleDrivRef,
+    handleAllDrivers,
+    handleDriversRef,
 };
