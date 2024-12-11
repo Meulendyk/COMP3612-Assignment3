@@ -2,7 +2,7 @@ const fs = require('fs').promises;
 const path = require('path');
 
 //constructing path
-const jsonPath = path.join(__dirname, './data', 'drivers.json');
+const jsonPath = path.join(__dirname, '../data', 'drivers.json');
 
 //get data
 let drivers;
