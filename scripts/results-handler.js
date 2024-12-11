@@ -10,6 +10,7 @@ const handleConstResults = (constructorsProvider, racesProvider, resultsProvider
 
         //Establish variables for filter 
         const refToFind = req.params.ref;
+        refToFind = refToFind.toLowerCase();
         const yearToFind = req.params.year;
 
         //Function - foundResults filters path variables and creates array
@@ -37,6 +38,7 @@ const handleDriversResults = (driversProvider, racesProvider, resultsProvider, a
 
         //Establish variables for filter 
         const refToFind = req.params.ref;
+        refToFind = refToFind.toLowerCase();
         const yearToFind = req.params.year;
         
         //Function - foundResults filters path variables and creates array
@@ -69,7 +71,7 @@ const handleIdResults = (racesProvider, app) => {
         if (foundResults.length > 0) {
             resp.json(foundResults);
         } else {
-            resp.json(jsonMessage(`Driver with id ${idToFind} not found`));
+            resp.json(jsonMessage(`Race with id ${idToFind} not found`));
         }
     })
 }
@@ -92,7 +94,7 @@ const handleSeasonResults = (racesProvider, app) => {
         if (foundResults.length > 0) {
             resp.json(foundResults);
         } else {
-            resp.json(jsonMessage(`Driver with year ${yearToFind} not found`));
+            resp.json(jsonMessage(`Race with year ${yearToFind} not found`));
         }
     })
 }
