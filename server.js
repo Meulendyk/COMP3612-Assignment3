@@ -25,7 +25,7 @@ const resultsHandler = require('./scripts/results-handler.js');
 */
 app.use('/static', express.static(path.join(__dirname, 'public')));
 circuitsHandler.handleAllCirc(circuitsProvider, app);
-circuitsHandler.handleCircById(circuitsProvider, app);
+circuitsHandler.handleCircId(circuitsProvider, app);
 
 app.use( (req,resp) => {
     resp.status(404).send('Unable to find the requested resource!');
