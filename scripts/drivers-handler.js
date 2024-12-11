@@ -13,7 +13,7 @@ const handleDriversRef = (driversProvider, app) => {
     app.get('/api/drivers/:ref', (req, resp) => {
         const drivers = driversProvider.getDrivData();
         const refToFind = req.params.ref;
-        const foundDrivers = drivers.filter(obj => refToFind === obj.driverRef);
+        const foundDrivers = drivers.filter(obj => refToFind == obj.driverRef);
         if (foundDrivers.length > 0) {
             resp.json(foundDrivers);
         } else {
