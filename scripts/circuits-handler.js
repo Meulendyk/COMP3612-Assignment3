@@ -28,5 +28,5 @@ const jsonMessage = (msg) => {
 
 module.exports = {
     handleAllCirc,
-    handleCirdId
+    handleCircId
 };
