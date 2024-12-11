@@ -28,6 +28,13 @@ circuitsHandler.handleCircId(circuitsProvider, app);
 constructorsHandler.handleAllConst(constructorsProvider, app);
 constructorsHandler.handleConstRef(constructorsProvider, app);
 
+driversHandler.handleAllDrivers(driversProvider, app);
+driversHandler.handleDriversRef(driversProvider, app);
+
+racesHandler.handleAllRaces(racesProvider, app);
+racesHandler.handleRacesYear(racesProvider, app);
+racesHandler.handleRacesId(racesProvider, app);
+
 
 
 
