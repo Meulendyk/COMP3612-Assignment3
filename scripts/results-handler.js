@@ -10,7 +10,6 @@ const handleConstResults = (constructorsProvider, racesProvider, resultsProvider
 
         //Establish variables for filter 
         const refToFind = req.params.ref;
-        refToFind = refToFind.toLowerCase();
         const yearToFind = req.params.year;
 
         //Function - foundResults filters path variables and creates array
@@ -38,7 +37,6 @@ const handleDriversResults = (driversProvider, racesProvider, resultsProvider, a
 
         //Establish variables for filter 
         const refToFind = req.params.ref;
-        refToFind = refToFind.toLowerCase();
         const yearToFind = req.params.year;
         
         //Function - foundResults filters path variables and creates array

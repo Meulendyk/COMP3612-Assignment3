@@ -20,7 +20,6 @@ const handleDriversRef = (driversProvider, app) => {
 
         //Establish variables for filter 
         const refToFind = req.params.ref;
-        refToFind = refToFind.toLowerCase();
 
         //Function - foundDrivers filters path variables and creates array
         const foundDrivers = drivers.filter(obj => refToFind == obj.driverRef);

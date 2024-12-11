@@ -19,7 +19,6 @@ const handleConstRef = (constructorsProvider, app) => {
 
         //Establish variables for filter 
         const refToFind = req.params.ref
-        refToFind = refToFind.toLowerCase();
 
         //Function - foundConstructors filters path variables and creates array
         const foundConstructors = constructors.filter(obj => refToFind == obj.constructorRef);
