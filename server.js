@@ -35,15 +35,4 @@ const port = 8080;
 app.listen(port, () => {
     console.log('Server running at port=' + port);
 });
-    
-
-
-
-
-
-
-
-const port = 8080;
-server.listen(port);
-console.log("Server running at port=" + port);
 
