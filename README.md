@@ -85,3 +85,7 @@ This repository holds the code for Assignment #3 for COMP3612 at Mount Royal Uni
 - [**/api/results/race/1756348576**](https://alive-important-bream.glitch.me/api/results/race/1756348576) - Returns an error message "Race with id 1756328576 not found"
 - [**/api/results/season/2023**](https://alive-important-bream.glitch.me/api/results/season/2023) - Returns all race results using year "2023"
 - [**/api/results/season/2034**](https://alive-important-bream.glitch.me/api/results/season/2034) - Returns an error message "Race with year 2034 not found"
+
+### References
+- Used textbook extensively for sample code
+- Used ChatGPT for readme formatting
