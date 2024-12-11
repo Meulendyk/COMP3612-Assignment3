@@ -35,6 +35,12 @@ racesHandler.handleAllRaces(racesProvider, app);
 racesHandler.handleRacesYear(racesProvider, app);
 racesHandler.handleRacesId(racesProvider, app);
 
+resultsHandler.handleConstResults(constructorsProvider, racesProvider, resultsProvider, app);
+resultsHandler.handleDriversResults(driversProvider, racesProvider, resultsProvider, app);
+resultsHandler.handleIdResults(racesProvider, app);
+resultsHandler.handleSeasonResults(racesProvider, app);
+
+
 
 
 
