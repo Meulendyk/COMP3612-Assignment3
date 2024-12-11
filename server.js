@@ -14,9 +14,6 @@ const constructorsHandler = require('./scripts/constructors-handler.js');
 const driversProvider = require('./scripts/drivers-provider.js');
 const driversHandler = require('./scripts/drivers-handler.js');
 
-const qualifyingProvider = require('./scripts/qualifying-provider.js');
-const qualifyingHandler = require('./scripts/qualifying-handler.js');
-
 const racesProvider = require('./scripts/races-provider.js');
 const racesHandler = require('./scripts/races-handler.js');
 
