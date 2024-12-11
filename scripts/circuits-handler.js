@@ -9,7 +9,7 @@ const handleAllCirc = (circuitProvider, app) => {
 };
 
 //returns circuit of specific id
-const handleCirdId = (circuitProvider, app) => {
+const handleCircId = (circuitProvider, app) => {
     app.get('/api/circuits/:id', (req, resp) => {
         const circuits = circuitProvider.getCircData();
         const idToFind = parseInt(req.params.id, 10);
