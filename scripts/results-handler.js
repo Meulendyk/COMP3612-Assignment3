@@ -8,11 +8,11 @@ const handleConstResults = (constructorsProvider, racesProvider, resultsProvider
         const refToFind = req.params.ref;
         const yearToFind = req.params.year;
 
-        const foundResults = constructors.filter(obj => obj.constructor.ref == refToFind && obj.race.year == yearToFind);
+        const foundResults = results.filter(obj => obj.constructor.ref == refToFind && obj.race.year == yearToFind);
         if (foundResults.length > 0) {
             resp.json(foundResults);
         } else {
-            resp.json(jsonMessage(`Constructor with ref ${refToFind} not found`));
+            resp.json(jsonMessage(`Result with constructor ref ${refToFind} & year ${yearToFind} not found`));
         }
 
     })
@@ -55,7 +55,7 @@ const handleIdResults = (racesProvider, app) => {
 }
 
 const handleSeasonResults = (racesProvider, app) => {
-    app.get('/api/results/race/:year', (req, resp) => {
+    app.get('/api/results/season/:year', (req, resp) => {
         const results = racesProvider.getRacData();
 
         const yearToFind = req.params.year;
