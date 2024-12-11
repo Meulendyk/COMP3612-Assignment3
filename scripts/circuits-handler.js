@@ -12,7 +12,7 @@ const handleAllCirc = (circuitProvider, app) => {
 const handleCircId = (circuitProvider, app) => {
     app.get('/api/circuits/:id', (req, resp) => {
         const circuits = circuitProvider.getCircData();
-        const idToFind = parseInt(req.params.circuitId, 10);
+        const idToFind = req.params.circuitId;
         const foundCircuit = circuits.filter(obj => idToFind == obj.id);
         if (foundCircuit.length > 0) {
             resp.json(foundCircuit);
